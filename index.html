@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Briefing · Consultoria de Esteira · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#14203a; --muted:#5d6475; --line:#e2ddd1;
+  --gold:#a8812f; --gold-soft:#f3ead6; --navy:#14203a; --ok:#2f7a4f; --no:#a33a2e; --warn:#8a5a00;
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0e1526; --surface:#16203a; --ink:#ece7dc; --muted:#a3a8b8; --line:#2a3550;
+  --gold:#d4b06a; --gold-soft:#2a2a2a; --navy:#0b1120; --ok:#6fc290; --no:#e58a7e; --warn:#e0b25a; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-padding-top:12px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;padding:0 16px 130px}
+.wrap{max-width:680px;margin:0 auto;padding-block:28px 24px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font-family:var(--display);font-weight:600;font-size:2.3rem;line-height:1.1;margin:.3em 0 .5em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:1.75rem;margin:2.4em 0 .4em;text-wrap:balance;display:flex;gap:12px;align-items:baseline}
+h2 .letra{color:var(--gold);font-size:1.1em}
+.lead{color:var(--muted);margin:0 0 .7em}
+.lead b{color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.facts li{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted)}
+.status{margin-top:16px;font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.status .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.status.ok .dot{background:var(--ok)} .status.warn .dot{background:var(--warn)} .status.no .dot{background:var(--no)}
+.ja{background:var(--gold-soft);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:15px;margin:0 0 12px}
+.ja b{color:var(--gold);letter-spacing:.06em;font-size:12px;text-transform:uppercase;display:block;margin-bottom:4px}
+.ja .fonte{color:var(--muted);font-size:13px;display:block;margin-top:6px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;margin-top:14px}
+.q.done{border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.q .t{display:flex;gap:12px;align-items:baseline;margin:0 0 10px}
+.q .n{font-family:var(--display);color:var(--gold);font-size:1.5rem;font-weight:600;min-width:1.6em;line-height:1}
+.q .txt{font-size:16px;font-weight:600;line-height:1.45}
+textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:72px;resize:none;overflow:hidden;line-height:1.5}
+textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+textarea::placeholder{color:color-mix(in srgb,var(--muted) 70%,transparent)}
+.hint{font-size:13px;color:var(--muted);margin:8px 0 0}
+table.prod{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px}
+table.prod th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:4px 6px 6px;font-weight:700}
+table.prod td{padding:3px}
+table.prod input{width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 9px}
+table.prod input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.prodwrap{overflow-x:auto;margin-top:6px;-webkit-overflow-scrolling:touch}
+.prodwrap table{min-width:640px}
+.btn{font:inherit;font-weight:700;font-size:15px;border-radius:999px;padding:12px 22px;cursor:pointer;border:1.5px solid var(--gold);text-decoration:none;display:inline-block}
+.btn.primary{background:var(--gold);color:#fff}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.small{font-size:13px;padding:7px 14px}
+.btn:disabled{opacity:.5;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.end{margin-top:40px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 20px}
+.end h2{margin:0 0 .4em;justify-content:center}
+.end p{margin:.3em 0 1em;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.done-msg{margin-top:14px;font-size:15px;color:var(--ok);font-weight:600}
+.fallback{margin-top:14px;font-size:14px;color:var(--warn)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.bar .in{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
+.track{flex:1;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.fill{height:100%;background:var(--gold);width:0;transition:width .3s}
+.num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+.audio{margin-top:18px;border:1.5px dashed var(--gold);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--muted)}
+.audio b{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Lumen · Consultoria de Esteira de Produtos</div>
+  <h1 id="titulo">Este é o primeiro passo da sua consultoria</h1>
+  <p class="lead">É com ele que a Denise vai estudar o seu negócio antes de desenhar a sua esteira. Quanto mais você contar, mais informação a gente tem para desenhar uma esteira que realmente venda e que caiba na sua rotina de atendimentos.</p>
+  <p class="lead"><b>Como responder:</b> no seu tempo, direto aqui. Não existe resposta certa, e não precisa ser bonito: conte como contaria para uma amiga. Pode parar e voltar depois; o que você escreve fica guardado.</p>
+  <p class="lead"><b>O que já sabemos:</b> nos quadros dourados marcados como <b>JÁ TEMOS</b> está o que você já contou pra gente. Confira, corrija o que estiver errado e complete, sem repetir o que já falou.</p>
+  <p class="lead"><b>Prazos:</b> você não tem prazo para devolver. Os prazos da consultoria começam quando recebemos as respostas: em até 2 dias úteis validamos (e pedimos o que faltar) e, a partir daí, a Denise tem até 10 dias úteis para apresentar a sua esteira em vídeo, com o mapa por escrito.</p>
+  <ul class="facts"><li><span id="nperg">41</span> perguntas</li><li>uns 40 minutos</li><li>salva sozinho</li><li>pode responder em partes</li></ul>
+  <div class="status" id="status"><span class="dot"></span><span id="statustxt">Conectando…</span></div>
+  <div class="audio"><b>Prefere responder por áudio?</b> Pode: grave no WhatsApp da Paula dizendo o número da pergunta antes de falar. A gente transcreve e preenche aqui pra você.</div>
+</header>
+
+<main id="blocos"><p class="lead" id="carregando">Carregando as perguntas…</p></main>
+
+<div class="end">
+  <h2>Terminou?</h2>
+  <p>Toque em enviar e a Denise já começa a estudar o seu negócio. Se lembrar de algo depois, pode voltar aqui, mudar e enviar de novo.</p>
+  <div class="btns">
+    <button class="btn primary" id="enviar" type="button">Enviar pra Denise</button>
+    <button class="btn ghost" id="copiar" type="button" hidden>Copiar respostas</button>
+  </div>
+  <p class="done-msg" id="donemsg" hidden></p>
+  <p class="fallback" id="fallback" hidden></p>
+</div>
+</div>
+
+<div class="bar"><div class="in"><span><span class="num" id="cnt">0</span> de <span class="num" id="tot">41</span></span><div class="track"><div class="fill" id="fill"></div></div><span id="save">·</span></div></div>
+
+<script>
+const WEBHOOK = "https://n8neditor.paulamunhoz.online/webhook/briefing-esteira";
+const INFO = "https://n8neditor.paulamunhoz.online/webhook/briefing-esteira-info";
+const WA_PAULA = "5511984660885";
+const C = new URLSearchParams(location.search).get("c") || "";
+const STORE = "briefing-esteira-" + C;
+const COLS = ["Nome","Preço","Formato","Duração","Desde quando","Está vendendo?"];
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+let BLOCOS = [], TODAS = [], NOME = "", TABELA = null;   // TABELA = número da pergunta que é tabela de produtos
+let S = {r:{}, prod:[["","","","","",""],["","","","","",""],["","","","","",""]], enviado:false};
+try{ const l = JSON.parse(localStorage.getItem(STORE)||"null"); if(l && l.r) S = Object.assign(S, l); }catch(e){}
+
+function status(cls, txt){ const s=$("#status"); s.className="status "+cls; $("#statustxt").textContent=txt; }
+function marcaSalvo(txt){ $("#save").textContent = txt; }
+
+function montaBlocos(perguntas){
+  const map = new Map();
+  perguntas.forEach(p=>{
+    const b = p.bloco || "Perguntas"; if(!map.has(b)) map.set(b, {t:b, q:[]});
+    map.get(b).q.push(p);
+    if(p.tipo==="tabela de produtos") TABELA = p.n;
+  });
+  BLOCOS = [...map.values()].map(b=>{ const m=b.t.match(/^([A-Z])\.\s*(.*)$/); return {l:m?m[1]:"", t:m?m[2]:b.t, q:b.q}; });
+  TODAS = perguntas.map(p=>p.n);
+}
+function render(){
+  $("#blocos").innerHTML = BLOCOS.map(b=>`
+   <section>
+    <h2>${b.l?`<span class="letra">${b.l}.</span>`:""}<span>${esc(b.t)}</span></h2>
+    ${b.q.map(p=>`<div class="q" id="q${p.n}"><div class="t"><span class="n">${p.n}</span><span class="txt">${esc(p.pergunta)}</span></div>
+      ${p.jaTemos?`<div class="ja"><b>Já temos</b>${esc(p.jaTemos)}</div>`:""}
+      ${p.tipo==="tabela de produtos"?tabela():`<textarea id="r${p.n}" data-q="${p.n}" placeholder="Escreva aqui…"></textarea>`}
+    </div>`).join("")}
+   </section>`).join("");
+  $("#tot").textContent = TODAS.length; $("#nperg").textContent = TODAS.length;
+}
+function tabela(){
+  return `<div class="prodwrap"><table class="prod"><thead><tr>${COLS.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody id="prodrows"></tbody></table></div>
+  <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap"><button class="btn ghost small" type="button" id="addrow">+ Adicionar linha</button><span class="hint" style="margin:0">Se preferir, escreva em texto na pergunta seguinte ou mande por áudio.</span></div>`;
+}
+function renderRows(){ const tb=$("#prodrows"); if(!tb) return; tb.innerHTML = S.prod.map((row,i)=>`<tr>${row.map((v,c)=>`<td><input data-r="${i}" data-c="${c}" value="${esc(v)}" aria-label="${COLS[c]} do produto ${i+1}"></td>`).join("")}</tr>`).join(""); }
+function grow(t){ t.style.height="auto"; t.style.height=(t.scrollHeight+2)+"px"; }
+function prodTexto(){ return S.prod.filter(r=>r.some(v=>v.trim())).map((r,i)=>`${i+1}) `+COLS.map((c,j)=>r[j].trim()?`${c}: ${r[j].trim()}`:"").filter(Boolean).join(" · ")).join("\n"); }
+function prodDeTexto(txt){ // reconstrói a tabela a partir do texto salvo no Notion
+  const linhas = String(txt||"").split("\n").filter(l=>l.trim()); if(!linhas.length) return null;
+  return linhas.map(l=>{ const row=["","","","","",""]; l.replace(/^\d+\)\s*/,"").split(" · ").forEach(par=>{ const i=par.indexOf(": "); if(i<0) return; const k=par.slice(0,i), v=par.slice(i+2); const c=COLS.indexOf(k); if(c>=0) row[c]=v; }); return row; });
+}
+function respondida(n){ return n===TABELA ? !!prodTexto() : !!(S.r["q"+n]||"").trim(); }
+function progress(){ const k=TODAS.filter(respondida).length; $("#cnt").textContent=k; $("#fill").style.width=(100*k/Math.max(TODAS.length,1))+"%"; TODAS.forEach(n=>{ const el=$("#q"+n); if(el) el.classList.toggle("done", respondida(n)); }); }
+function fill(){ TODAS.forEach(n=>{ const t=$("#r"+n); if(t){ t.value=S.r["q"+n]||""; grow(t); } }); renderRows(); progress(); if(S.enviado){ $("#donemsg").hidden=false; $("#donemsg").textContent="Recebido! A Denise já pode estudar o seu negócio. Se mudar algo, pode editar aqui e enviar de novo."; } }
+
+// ---- gravação ----
+let dirty=new Set(), timer=null, retry=null;
+function local(){ try{ localStorage.setItem(STORE, JSON.stringify(S)); }catch(e){} }
+function agenda(key){ dirty.add(key); local(); progress(); marcaSalvo("salvando…"); clearTimeout(timer); timer=setTimeout(()=>envia(), 1200); }
+async function envia(extra){
+  const respostas={}; dirty.forEach(k=>{ respostas[k] = (k==="q"+TABELA) ? prodTexto() : (S.r[k]||""); });
+  if(!Object.keys(respostas).length && !extra) return true;
+  const body=Object.assign({c:C, nome:NOME, respostas, enviado:S.enviado, ts:new Date().toISOString(), total:TODAS.length, respondidas:TODAS.filter(respondida).length}, extra||{});
+  try{
+    const r=await fetch(WEBHOOK,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(!r.ok) throw new Error("http "+r.status);
+    dirty.clear(); clearTimeout(retry); marcaSalvo("salvo ✓");
+    status("ok","Tudo o que você escreve é guardado e chega pra Lumen na hora. Pode parar e voltar depois.");
+    $("#fallback").hidden=true; $("#copiar").hidden=true; return true;
+  }catch(e){
+    marcaSalvo("salvo neste aparelho");
+    status("warn","Sem conexão agora. Suas respostas estão guardadas neste aparelho; assim que a internet voltar, elas seguem sozinhas.");
+    clearTimeout(retry); retry=setTimeout(()=>envia(extra), 30000); return false;
+  }
+}
+document.addEventListener("input", e=>{ const t=e.target;
+  if(t.tagName==="TEXTAREA" && t.dataset.q){ S.r["q"+t.dataset.q]=t.value; grow(t); agenda("q"+t.dataset.q); }
+  if(t.tagName==="INPUT" && t.dataset.r!=null){ S.prod[+t.dataset.r][+t.dataset.c]=t.value; agenda("q"+TABELA); } });
+document.addEventListener("click", e=>{ if(e.target.id==="addrow"){ S.prod.push(["","","","","",""]); renderRows(); local(); } });
+$("#enviar").addEventListener("click", async ()=>{
+  S.enviado=true; local(); TODAS.forEach(n=>dirty.add("q"+n));
+  $("#enviar").disabled=true; $("#enviar").textContent="Enviando…";
+  const ok=await envia({enviado:true, evento:"enviar"});
+  $("#enviar").disabled=false; $("#enviar").textContent="Enviar pra Denise";
+  const dm=$("#donemsg"); dm.hidden=false;
+  if(ok){ dm.textContent="Recebido! A Denise já pode estudar o seu negócio. Em até 2 dias úteis a Paula te escreve se faltar algo. Se mudar alguma resposta, pode editar aqui e enviar de novo."; }
+  else{ dm.textContent="Suas respostas estão guardadas aqui, mas não conseguimos enviar agora."; $("#fallback").hidden=false; $("#fallback").textContent="Tente de novo quando a internet voltar, ou toque em Copiar respostas e cole no WhatsApp da Paula."; $("#copiar").hidden=false; }
+});
+function asText(){ let s=`Briefing · Consultoria de Esteira · ${NOME}\n\n`; BLOCOS.forEach(b=>{ s+=`${b.l?b.l+". ":""}${b.t}\n`; b.q.forEach(p=>{ const v=p.n===TABELA?prodTexto():(S.r["q"+p.n]||""); s+=`${p.n}. ${v.trim()||"(sem resposta)"}\n`; }); s+="\n"; }); return s; }
+$("#copiar").addEventListener("click", async ()=>{ const txt=asText(); try{ await navigator.clipboard.writeText(txt); $("#copiar").textContent="Copiado ✓"; }catch(e){} window.open("https://wa.me/"+WA_PAULA+"?text="+encodeURIComponent(txt.slice(0,6000)),"_blank"); });
+window.addEventListener("online", ()=>{ if(dirty.size) envia(); });
+
+// ---- carga inicial: perguntas, já temos e respostas vêm do robô ----
+(async()=>{
+  status("", "Conectando…");
+  if(!C){ $("#carregando").textContent="Este link está incompleto. Peça o link certo pra Paula."; status("no","Link sem identificação da cliente."); $("#enviar").disabled=true; return; }
+  try{
+    const r = await fetch(INFO+"?c="+encodeURIComponent(C), {cache:"no-store"}); if(!r.ok) throw new Error("http "+r.status);
+    const d = await r.json(); if(!d.ok || !d.perguntas || !d.perguntas.length) throw new Error("sem perguntas");
+    NOME = d.nome || ""; const primeiro = NOME.split(" ")[0];
+    if(primeiro) $("#titulo").textContent = `${primeiro}, este é o primeiro passo da sua consultoria`;
+    document.title = `Briefing · Consultoria de Esteira · ${primeiro||"Lumen"}`;
+    montaBlocos(d.perguntas); render();
+    // respostas já gravadas na Lumen (outro aparelho) entram onde o aparelho não tem nada
+    d.perguntas.forEach(p=>{ const k="q"+p.n; if(p.resposta && !(S.r[k]||"").trim()){ if(p.n===TABELA){ const rows=prodDeTexto(p.resposta); if(rows && !S.prod.some(r=>r.some(v=>v.trim()))) S.prod=rows; } else S.r[k]=p.resposta; } });
+    if(String(d.status||"").startsWith("✅")) S.enviado=true;
+    fill(); local();
+    status("ok","Tudo o que você escreve é guardado e chega pra Lumen na hora. Pode parar e voltar depois.");
+    marcaSalvo(dirty.size?"salvando…":"salvo ✓");
+    fetch(WEBHOOK,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({c:C, nome:NOME, evento:"abriu", ts:new Date().toISOString(), total:TODAS.length, respondidas:TODAS.filter(respondida).length})}).catch(()=>{});
+    if(dirty.size) envia();
+  }catch(e){
+    $("#carregando").textContent="Não conseguimos carregar as perguntas agora. Confira a internet e recarregue a página. Se continuar, avise a Paula.";
+    status("no","Sem conexão com a Lumen."); $("#enviar").disabled=true;
+  }
+})();
+</script>
+</body>
+</html>
